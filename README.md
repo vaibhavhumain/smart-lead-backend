@@ -16,11 +16,11 @@ Centralized error handling
 
 Optimized database queries
 
-🛠️ Backend Setup Instructions
+ Backend Setup Instructions
 
 Clone the repo:
 
-git clone <repo-url>
+git clone https://github.com/vaibhavhumain/smart-lead-backend
 
 
 Install backend dependencies:
@@ -34,7 +34,6 @@ Create an .env file:
 PORT=5000
 MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_jwt_secret
-CRM_API_URL=https://example.com/api
 CRM_API_KEY=your_api_key
 
 

@@ -17,7 +17,14 @@ async function start() {
     console.log("Mongo connected");
 
     const app = express();
-    app.use(cors());
+    app.use(
+  cors({
+    origin: ["https://hilarious-beijinho-ea84a5.netlify.app"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true,
+  })
+);
+
     app.use(express.json());
 
     app.use('/api/leads', leadsRouter);

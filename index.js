@@ -17,15 +17,21 @@ async function start() {
     console.log("Mongo connected");
 
     const app = express();
+
     app.use(
-  cors({
-    origin: ["https://hilarious-beijinho-ea84a5.netlify.app"],
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    credentials: true,
-  })
-);
+      cors({
+        origin: "https://hilarious-beijinho-ea84a5.netlify.app",
+        methods: ["GET", "POST"],
+        credentials: false,
+        allowedHeaders: ["Content-Type"],
+      })
+    );
 
     app.use(express.json());
+
+    app.get("/", (req, res) => {
+      res.send("Smart Lead Backend Running");
+    });
 
     app.use('/api/leads', leadsRouter);
 
